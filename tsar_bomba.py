@@ -118,12 +118,8 @@ try:
     import pycuda.compiler as compiler
     PYCUDA_AVAILABLE = True
 except ImportError:
-    try:
-        from cuda import pycuda_solver
-        PYCUDA_AVAILABLE = True
-    except ImportError:
-        PYCUDA_AVAILABLE = False
     cuda, gpuarray, compiler = None, None, None
+    PYCUDA_AVAILABLE = False
 
 import threading
 
